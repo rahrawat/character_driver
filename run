@@ -1,0 +1,51 @@
+#! bin/bash
+dmesg -c
+unlink node
+end()
+{
+exit(0)
+}
+
+
+
+
+
+
+if ( make )
+	then
+	read -p "Do you want to insert the module y/n" res
+	if [ $res = 'y' ]
+	then
+	insmod ./modules/drv.ko nod=$1
+	read
+	lsmod
+	read
+	dmesg
+	read -p"enter major no  " qw
+	cat /proc/devices
+	read
+
+	mknod node c $qw 0
+
+	read
+	make -C /home/rahul/files/drivers/hello_kernel/apps/
+
+
+	./apps/main
+
+	read
+	rmmod drv
+	read
+	lsmod
+	read
+	dmesg
+	read
+	end
+	else
+	end
+	fi
+	else
+
+	end
+	fi
+
