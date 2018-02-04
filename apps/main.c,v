@@ -1,0 +1,68 @@
+head	1.1;
+access;
+symbols;
+locks
+	Rahul:1.1; strict;
+comment	@ * @;
+
+
+1.1
+date	2016.05.28.08.36.36;	author Rahul;	state Exp;
+branches;
+next	;
+
+
+desc
+@hello
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@#include"header.h"
+int open_dev();
+int close_dev( int );
+int main()
+{
+	int choice, fd;
+	printf("---------------MAIN MENU----------------------\n");
+	printf("1. open\n");
+	printf("2. close\n");
+	printf("3.exit\n");
+	printf("enter your choice\n");
+	scanf("%d",&choice);
+	switch(choice)
+	{
+	case 1:
+		fd=open_dev();
+		break;
+	case 2:
+		fd=close_dev(fd);
+		break;
+	case 3:
+		exit(0);
+		break;
+	default:
+		printf("wrong choice\n");
+	}
+
+	return 0;
+}
+int open_dev()
+{
+int fd;
+fd = open();
+
+return fd;
+}
+
+
+int close_dev(int fd)
+{
+
+}
+
+@
